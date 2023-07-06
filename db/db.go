@@ -19,7 +19,7 @@ func InitDB() error {
 	sslMode := os.Getenv("DB_SSL")
 
 	connStr := fmt.Sprintf("postgresql://%v:%v@%v/%v?sslmode=%v",
-		username, password, dbName, dbHost, sslMode)
+		username, password, dbHost, dbName, sslMode)
 
 	db, err := sql.Open("postgres", connStr)
 	if err != nil {
